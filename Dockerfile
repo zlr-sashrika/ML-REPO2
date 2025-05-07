@@ -14,4 +14,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Command to run the application
-CMD ["jupyter", "nbconvert","--to","notebook","--execute" , "notebooks\drugs_pipeline.ipynb" ,"--output","drugs_pipeline.ipynb"]
+CMD python3 -m http.server 8080 & \
+     ["jupyter", "nbconvert", "--to", "notebook", "--execute", "notebooks/drugs_pipeline.ipynb", "--output", "drugs_pipeline.ipynb"]
